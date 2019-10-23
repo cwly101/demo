@@ -62,6 +62,8 @@ numbers: [33,66,7]
 SpEL|不支持|支持
 JSR303数据检验|支持|不支持
 复杂类型封闭|支持|不支持
+   
+
 松散绑定： last-name 和 lastName 及 last_name都被识别  
 JSR303检验使用注解 @Validated， 以及各个属性的注解，如：@Email、@NotEmpty、@Range等
 复杂类型封闭：如value为数组、集合、列表、对象时，@value解析不了。  
