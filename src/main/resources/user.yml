@@ -1,0 +1,8 @@
+user:
+  username: tom
+  age: 31
+  score: {yuwen: 88,shuxue: 99.5,english: 98}
+  pets: [
+    {name: little,type: cat,age: 1},
+    {name: tina,type: dog,age: 1},
+  ]
