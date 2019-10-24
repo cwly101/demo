@@ -1,3 +1,9 @@
 server:
   port: 8080
   servlet:    context-path: /demo
+# 是否开启spring boot的调试模式，即自动配置报告打印到控制台
+debug: false
+logging:  level: 
+    # 系统级日志打印级别设置    root: INFO
+    # 自定义包下的日志打印级别设置（可精细化设置包的深度）
+    com.cw: TRACE

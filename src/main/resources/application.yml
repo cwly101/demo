@@ -3,26 +3,18 @@
 #  servlet:#    context-path: /demo
 # 激活不同环境下的配置文件，如：dev（开发环境）、pro（生产环境）
 # 环境配置文件命令格式：application-{profile}.yml/properties
-spring:  profiles:    active:    - pro
+spring:  profiles:    active:    - dev
+  output:    ansi:      enabled:  ALWAYS
 logging:
-  file: #    path: "./logs"
+  file: 
     # 推荐使用logging.file.name属性, 而不是 logging.file.path, 后者仅能指定日志文件的目录, 其文件名永远是spring.log
     name: ./logs/demo.log
     # 保存几天的日志
     max-history: 10  
     # 单个日志文件最大容量
     max-size: 128KB   
-  level:    root: INFO
-    com.cw: INFO
-    
-# 自定义数据
-#user: 
-#  username: tom
-#  age: 31
-#  score: {yuwen: 88,shuxue: 99.5,english: 98}
-#  pets: [
-#    {name: little,type: cat,age: 1},
-#    {name: tina,type: dog,age: 1},
-#  ]
+# 见各自环境配置文件
+#  level:#    root: INFO
+#    com.cw: DEBUG
     
   

@@ -115,4 +115,74 @@ java -jar demo.jar --spring.profiles.active=pro
 3. classpath: /config
 4. classpath: /  
  
-**说明：classpath就是 /src/main/resources 其中，高优先级覆盖低优先级配置。1最高，4最低**
+**说明：classpath就是 /src/main/resources 其中，高优先级覆盖低优先级配置。1最高，4最低。 几个优先级配置文件可以同时存在，会形成互补配置**  
+使用场景：项目打包好后，我们可以通过命令行参数的形式指定配置文件的新位置，形成互补配置。运维更新时很有用，如：
+```cmd
+# 假设新上传的外部配置文件路径如： /opt/config/application.yml
+java -jar demo.jar --spring.config.location=/opt/config/application.yml
+
+# 如果外部配置文件和jar包位于同一级目录，可省略配置参数，如：
+java -jar demo.jar
+```
+这样可以通过参数加载外部的配置文件用于项目，而不用重新编译打包上传运行等一系列操作  
+**注：优先级3、4配置文件不参与打包，不会被打包到jar文件中**  
+命令行修改配置，以端口举例
+```cmd
+java -jar demo.jar --server.port=80 --server.context-path=/demo
+```
+多个配置以空格分隔
+
+### springboot配置文件支持所有配置属性
+[springboot官方配置属性](https://docs.spring.io/spring-boot/docs/2.2.0.RELEASE/reference/html/appendix-application-properties.html#common-application-properties)  
+
+### @Conditional注解
+作用：判断指定条件是否成功。用于类注解，条件成立后，类组件才会加载到容器。  
+几个扩展注解如下：  
+@ConditionalOnJava() // 系统的java版本是否符合要求  
+@ConditionalOnMissingBean()  // 不存在指定的bean，如果没有返回true，注入到容器  
+@ConditionalOnBean() //存在指定的bean  
+@ConditinalOnExpress() // 是否满足指定的SpEL  
+@ConditionalOnClass()  // 判断项目中是否包含指定的类。如果包含，返回true  
+@ConditionalOnWebApplication // 判断是否是一个web应用程序  
+@ConditionalOnNotWebApplication  // 不是一个web应用程序 
+@ConditionalOnProperty(prefix="spring.http.encoding",value="enabled",matchIfMissing=true) //判断配置文件中是否包含指定的前缀，如果不包含，即默认其包含，默认值：enabled  
+@ConditionalOnResource()  //类路径下是否存在指定的资源文件  
+... 还有很多  
+**都是实现的@Conditional(OnClassCondition.class)接口, OnClassCondition类有一个match方法，匹配返回true,不匹配false。 可以自己定义**  
+自动配置类多数必须在一定条件下才能生效；如需要某个类存在，而该类在某个jar包中，项目目前没导入该jar,那么该自动配置就不生效。  
+**可以通过在yml/properties配置文件中声明 debug: ture,来开启自动配置生效的配置报告，打印到控制台**
+```console
+# 自动配置评估报告
+============================
+CONDITIONS EVALUATION REPORT
+============================
+
+# 自动配置类启用的组件
+Positive matches:
+-----------------
+
+···
+
+
+# 自动配置类没有启用的组件
+Negative matches:
+-----------------
+
+···
+```
+
+### Springboot 日志配置
+logging.file | logging.path | 示例 | 描述 
+|---|:--:|:--:|---:
+(none) | (none) |  | 只在控制台打印
+指定文件名 | (none) | demo.log | 日志输出到demo.log(路径未指定，在程序根目录下生成demo.log)
+(none) | 指定目录 | ./logs | 输出到程序根目录下的logs文件夹中，默认文件夹名spring.log
+**如果都指定了，file仅指定了文件名，path指定了目录，那么组合后生效。如果file同时指定了目录，path不生效，以file为准**  
+logging.pattern.console 控制台输出的日志格式  
+logging.pattern.file 日志文件中打印的日志格式  
+%d 日期格式  如：%d{yyyy-MM-dd HH:mm:ss.SSS}  
+%thread 线程名
+%-5level 从右向右显示5个字符宽度
+%logger{50} 表示logger名最多50个字符
+%msg 日志信息
+%n 换行

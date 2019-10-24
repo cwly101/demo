@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cw.model.User;
 
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 //import lombok.extern.slf4j.Slf4j;
 
 @RestController
-//@Slf4j
-@Log4j2
+@Slf4j
+//@Log4j2
 public class DemoController {
 
 	/**
@@ -25,7 +25,7 @@ public class DemoController {
 	@GetMapping("/")
 	public User test() {
 //		System.out.println("test request");
-		log.info(String.format("==== test request , current time: %s ====", new Date()));
+		log.debug(String.format("==== test request , current time: %s ====", new Date()));
 //		User user = new User();
 //		user.setName("tomson");
 //		user.setAge(22);
