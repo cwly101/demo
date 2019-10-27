@@ -22,7 +22,7 @@ public class DemoController {
 	@Autowired
 	User user;
 	
-	@GetMapping("/")
+	@GetMapping("/user")
 	public User test() {
 //		System.out.println("test request");
 		log.debug(String.format("==== test request , current time: %s ====", new Date()));

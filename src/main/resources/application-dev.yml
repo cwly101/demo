@@ -7,3 +7,5 @@ logging:  level:
     # 系统级日志打印级别设置    root: INFO
     # 自定义包下的日志打印级别设置（可精细化设置包的深度）
     com.cw: TRACE
+# 自定义静态资源文件夹位置及名称，通常没必要。 以逗号分隔多个文件夹位置，如 classpath:/cw,classpath:/test
+#spring:#  resources:#    static-locations:#    - classpath:/acc

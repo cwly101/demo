@@ -1,32 +1,450 @@
-2019-10-25 06:52:05.306  INFO 1400 --- [main] com.cw.DemoApplication                   : Starting DemoApplication on DESKTOP-64DRU9D with PID 1400 (D:\spring\demo\target\classes started by cwly1 in D:\spring\demo)
-2019-10-25 06:52:05.311 DEBUG 1400 --- [main] com.cw.DemoApplication                   : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
-2019-10-25 06:52:05.311  INFO 1400 --- [main] com.cw.DemoApplication                   : The following profiles are active: dev
-2019-10-25 06:52:05.698  WARN 1400 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
-2019-10-25 06:52:05.710  INFO 1400 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
-2019-10-25 06:52:05.714  INFO 1400 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 377 ms
-2019-10-25 06:52:05.895  INFO 1400 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-10-25 06:52:05.963  INFO 1400 --- [main] io.undertow                              : starting server: Undertow - 2.0.27.Final
-2019-10-25 06:52:05.966  INFO 1400 --- [main] org.xnio                                 : XNIO version 3.3.8.Final
-2019-10-25 06:52:05.970  INFO 1400 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.8.Final
-2019-10-25 06:52:06.371  INFO 1400 --- [main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 8080 (http) with context path '/demo'
-2019-10-25 06:52:06.374  INFO 1400 --- [main] com.cw.DemoApplication                   : Started DemoApplication in 1.263 seconds (JVM running for 2.08)
-2019-10-25 06:52:38.534  INFO 1400 --- [XNIO-1 task-1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-10-25 06:52:38.535  INFO 1400 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-10-25 06:52:38.539  INFO 1400 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2019-10-25 06:52:38.549 DEBUG 1400 --- [XNIO-1 task-1] com.cw.controller.DemoController         : ==== test request , current time: Fri Oct 25 06:52:38 CST 2019 ====
-2019-10-25 06:52:53.465  INFO 1400 --- [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2019-10-25 06:52:53.467  INFO 1400 --- [RMI TCP Connection(10)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-10-25 06:52:53.468  INFO 1400 --- [RMI TCP Connection(10)-127.0.0.1] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
-2019-10-25 06:52:53.470  INFO 1400 --- [RMI TCP Connection(10)-127.0.0.1] io.undertow                              : stopping server: Undertow - 2.0.27.Final
-2019-10-25 06:55:02.210  INFO 11024 --- [main] com.cw.DemoApplicationTests              : Starting DemoApplicationTests on DESKTOP-64DRU9D with PID 11024 (started by cwly1 in D:\spring\demo)
-2019-10-25 06:55:02.211 DEBUG 11024 --- [main] com.cw.DemoApplicationTests              : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
-2019-10-25 06:55:02.211  INFO 11024 --- [main] com.cw.DemoApplicationTests              : The following profiles are active: dev
-2019-10-25 06:55:03.216  INFO 11024 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-10-25 06:55:03.481  INFO 11024 --- [main] com.cw.DemoApplicationTests              : Started DemoApplicationTests in 1.513 seconds (JVM running for 2.713)
-2019-10-25 06:55:03.769  INFO 11024 --- [main] com.cw.DemoApplicationTests              : === lombok log4j2 log ===
-2019-10-25 06:55:03.770 TRACE 11024 --- [main] com.cw.DemoApplicationTests              : === lombok log4j2 trace 跟踪信息 ===
-2019-10-25 06:55:03.770 DEBUG 11024 --- [main] com.cw.DemoApplicationTests              : === lombok log4j2 debug 调试信息 ===
-2019-10-25 06:55:03.770 ERROR 11024 --- [main] com.cw.DemoApplicationTests              : === lombok log4j2 Error  ===
-2019-10-25 06:55:03.779  INFO 11024 --- [main] com.cw.DemoApplicationTests              : ===log===
-2019-10-25 06:55:03.780 DEBUG 11024 --- [main] com.cw.DemoApplicationTests              : === debug ===
-2019-10-25 06:55:03.791  INFO 11024 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-27 14:50:03.873  INFO 4512 --- [main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 8080 (http) with context path '/demo'
+2019-10-27 14:50:03.878  INFO 4512 --- [main] com.cw.DemoApplication                   : Started DemoApplication in 1.342 seconds (JVM running for 2.089)
+2019-10-27 14:50:12.371  INFO 4512 --- [XNIO-1 task-1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-27 14:50:12.372  INFO 4512 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-27 14:50:12.375  INFO 4512 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2019-10-27 14:50:12.385  INFO 4512 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 14:50:12.386  INFO 4512 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 14:50:12.386  INFO 4512 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 14:50:14.072  INFO 4512 --- [XNIO-1 task-2] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 14:50:14.072  INFO 4512 --- [XNIO-1 task-2] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 14:50:14.072  INFO 4512 --- [XNIO-1 task-2] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 14:51:58.045  INFO 4512 --- [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-10-27 14:51:58.047  INFO 4512 --- [RMI TCP Connection(10)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-27 14:51:58.048  INFO 4512 --- [RMI TCP Connection(10)-127.0.0.1] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2019-10-27 14:51:58.049  INFO 4512 --- [RMI TCP Connection(10)-127.0.0.1] io.undertow                              : stopping server: Undertow - 2.0.27.Final
+2019-10-27 14:52:04.283  INFO 1744 --- [main] com.cw.DemoApplication                   : Starting DemoApplication on DESKTOP-64DRU9D with PID 1744 (D:\spring\demo\target\classes started by cwly1 in D:\spring\demo)
+2019-10-27 14:52:04.284 DEBUG 1744 --- [main] com.cw.DemoApplication                   : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2019-10-27 14:52:04.285  INFO 1744 --- [main] com.cw.DemoApplication                   : The following profiles are active: dev
+2019-10-27 14:52:04.706  WARN 1744 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-10-27 14:52:04.718  INFO 1744 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2019-10-27 14:52:04.718  INFO 1744 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 412 ms
+2019-10-27 14:52:04.907  INFO 1744 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-27 14:52:04.934  INFO 1744 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [public/index.html]
+2019-10-27 14:52:04.994  INFO 1744 --- [main] io.undertow                              : starting server: Undertow - 2.0.27.Final
+2019-10-27 14:52:04.997  INFO 1744 --- [main] org.xnio                                 : XNIO version 3.3.8.Final
+2019-10-27 14:52:05.002  INFO 1744 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.8.Final
+2019-10-27 14:52:05.432  INFO 1744 --- [main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 8080 (http) with context path '/demo'
+2019-10-27 14:52:05.434  INFO 1744 --- [main] com.cw.DemoApplication                   : Started DemoApplication in 1.343 seconds (JVM running for 2.118)
+2019-10-27 14:52:11.647  INFO 1744 --- [XNIO-1 task-1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-27 14:52:11.648  INFO 1744 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-27 14:52:11.652  INFO 1744 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2019-10-27 14:52:11.659  INFO 1744 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 14:52:11.659  INFO 1744 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 14:52:11.659  INFO 1744 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 14:52:14.879  INFO 1744 --- [XNIO-1 task-2] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 14:52:14.880  INFO 1744 --- [XNIO-1 task-2] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 14:52:14.880  INFO 1744 --- [XNIO-1 task-2] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 14:52:17.720  INFO 1744 --- [XNIO-1 task-3] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 14:52:17.720  INFO 1744 --- [XNIO-1 task-3] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 14:52:17.721  INFO 1744 --- [XNIO-1 task-3] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 14:52:26.321  INFO 1744 --- [XNIO-1 task-4] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 14:52:26.321  INFO 1744 --- [XNIO-1 task-4] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 14:52:26.321  INFO 1744 --- [XNIO-1 task-4] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 15:03:29.624  INFO 1744 --- [RMI TCP Connection(31)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-10-27 15:03:29.626  INFO 1744 --- [RMI TCP Connection(31)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-27 15:03:29.628  INFO 1744 --- [RMI TCP Connection(31)-127.0.0.1] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2019-10-27 15:03:29.630  INFO 1744 --- [RMI TCP Connection(31)-127.0.0.1] io.undertow                              : stopping server: Undertow - 2.0.27.Final
+2019-10-27 15:03:56.633  INFO 16248 --- [main] com.cw.DemoApplication                   : Starting DemoApplication on DESKTOP-64DRU9D with PID 16248 (D:\spring\demo\target\classes started by cwly1 in D:\spring\demo)
+2019-10-27 15:03:56.634 DEBUG 16248 --- [main] com.cw.DemoApplication                   : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2019-10-27 15:03:56.634  INFO 16248 --- [main] com.cw.DemoApplication                   : The following profiles are active: dev
+2019-10-27 15:03:57.043  WARN 16248 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-10-27 15:03:57.056  INFO 16248 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2019-10-27 15:03:57.056  INFO 16248 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 401 ms
+2019-10-27 15:03:57.252  INFO 16248 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-27 15:03:57.278  INFO 16248 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [public/index.html]
+2019-10-27 15:03:57.335  INFO 16248 --- [main] io.undertow                              : starting server: Undertow - 2.0.27.Final
+2019-10-27 15:03:57.338  INFO 16248 --- [main] org.xnio                                 : XNIO version 3.3.8.Final
+2019-10-27 15:03:57.343  INFO 16248 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.8.Final
+2019-10-27 15:03:57.785  INFO 16248 --- [main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 8080 (http) with context path '/demo'
+2019-10-27 15:03:57.787  INFO 16248 --- [main] com.cw.DemoApplication                   : Started DemoApplication in 1.353 seconds (JVM running for 2.119)
+2019-10-27 15:04:03.035  INFO 16248 --- [XNIO-1 task-1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-27 15:04:03.036  INFO 16248 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-27 15:04:03.038  INFO 16248 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2019-10-27 15:04:03.045  INFO 16248 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 15:04:03.045  INFO 16248 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 15:04:03.045  INFO 16248 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 15:04:05.767  INFO 16248 --- [XNIO-1 task-2] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 15:04:05.767  INFO 16248 --- [XNIO-1 task-2] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 15:04:05.767  INFO 16248 --- [XNIO-1 task-2] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 15:04:07.903  INFO 16248 --- [XNIO-1 task-3] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 15:04:07.903  INFO 16248 --- [XNIO-1 task-3] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 15:04:07.903  INFO 16248 --- [XNIO-1 task-3] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 15:04:10.007  INFO 16248 --- [XNIO-1 task-4] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 15:04:10.008  INFO 16248 --- [XNIO-1 task-4] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 15:04:10.008  INFO 16248 --- [XNIO-1 task-4] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 15:04:13.039  INFO 16248 --- [XNIO-1 task-5] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 15:04:13.039  INFO 16248 --- [XNIO-1 task-5] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 15:04:13.039  INFO 16248 --- [XNIO-1 task-5] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 15:04:24.160  INFO 16248 --- [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-10-27 15:04:24.162  INFO 16248 --- [RMI TCP Connection(7)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-27 15:04:24.163  INFO 16248 --- [RMI TCP Connection(7)-127.0.0.1] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2019-10-27 15:04:24.165  INFO 16248 --- [RMI TCP Connection(7)-127.0.0.1] io.undertow                              : stopping server: Undertow - 2.0.27.Final
+2019-10-27 15:04:51.093  INFO 5028 --- [main] com.cw.DemoApplication                   : Starting DemoApplication on DESKTOP-64DRU9D with PID 5028 (D:\spring\demo\target\classes started by cwly1 in D:\spring\demo)
+2019-10-27 15:04:51.094 DEBUG 5028 --- [main] com.cw.DemoApplication                   : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2019-10-27 15:04:51.094  INFO 5028 --- [main] com.cw.DemoApplication                   : The following profiles are active: dev
+2019-10-27 15:04:51.518  WARN 5028 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-10-27 15:04:51.530  INFO 5028 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2019-10-27 15:04:51.530  INFO 5028 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 414 ms
+2019-10-27 15:04:51.724  INFO 5028 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-27 15:04:51.755  INFO 5028 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [public/index.html]
+2019-10-27 15:04:51.815  INFO 5028 --- [main] io.undertow                              : starting server: Undertow - 2.0.27.Final
+2019-10-27 15:04:51.818  INFO 5028 --- [main] org.xnio                                 : XNIO version 3.3.8.Final
+2019-10-27 15:04:51.822  INFO 5028 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.8.Final
+2019-10-27 15:04:52.267  INFO 5028 --- [main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 8080 (http) with context path '/demo'
+2019-10-27 15:04:52.269  INFO 5028 --- [main] com.cw.DemoApplication                   : Started DemoApplication in 1.372 seconds (JVM running for 2.129)
+2019-10-27 15:04:59.082  INFO 5028 --- [XNIO-1 task-1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-27 15:04:59.083  INFO 5028 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-27 15:04:59.086  INFO 5028 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2019-10-27 15:04:59.092  INFO 5028 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 15:04:59.092  INFO 5028 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 15:04:59.092  INFO 5028 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 15:05:01.415  INFO 5028 --- [XNIO-1 task-2] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 15:05:01.415  INFO 5028 --- [XNIO-1 task-2] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 15:05:01.415  INFO 5028 --- [XNIO-1 task-2] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 15:05:03.054  INFO 5028 --- [XNIO-1 task-3] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 15:05:03.054  INFO 5028 --- [XNIO-1 task-3] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 15:05:03.054  INFO 5028 --- [XNIO-1 task-3] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 15:05:30.769  INFO 5028 --- [XNIO-1 task-4] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 15:05:30.769  INFO 5028 --- [XNIO-1 task-4] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 15:05:30.770  INFO 5028 --- [XNIO-1 task-4] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 15:05:33.233  INFO 5028 --- [XNIO-1 task-5] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 15:05:33.234  INFO 5028 --- [XNIO-1 task-5] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 15:05:33.234  INFO 5028 --- [XNIO-1 task-5] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 15:05:36.232  INFO 5028 --- [XNIO-1 task-6] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 15:05:36.232  INFO 5028 --- [XNIO-1 task-6] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 15:05:36.233  INFO 5028 --- [XNIO-1 task-6] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 15:05:46.295  INFO 5028 --- [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-10-27 15:05:46.297  INFO 5028 --- [RMI TCP Connection(11)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-27 15:05:46.298  INFO 5028 --- [RMI TCP Connection(11)-127.0.0.1] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2019-10-27 15:05:46.300  INFO 5028 --- [RMI TCP Connection(11)-127.0.0.1] io.undertow                              : stopping server: Undertow - 2.0.27.Final
+2019-10-27 15:08:17.036  INFO 16256 --- [main] com.cw.DemoApplication                   : Starting DemoApplication on DESKTOP-64DRU9D with PID 16256 (D:\spring\demo\target\classes started by cwly1 in D:\spring\demo)
+2019-10-27 15:08:17.038 DEBUG 16256 --- [main] com.cw.DemoApplication                   : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2019-10-27 15:08:17.038  INFO 16256 --- [main] com.cw.DemoApplication                   : The following profiles are active: dev
+2019-10-27 15:08:17.446  WARN 16256 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-10-27 15:08:17.458  INFO 16256 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2019-10-27 15:08:17.458  INFO 16256 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 399 ms
+2019-10-27 15:08:17.649  INFO 16256 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-27 15:08:17.676  INFO 16256 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [public/index.html]
+2019-10-27 15:08:17.728  INFO 16256 --- [main] io.undertow                              : starting server: Undertow - 2.0.27.Final
+2019-10-27 15:08:17.731  INFO 16256 --- [main] org.xnio                                 : XNIO version 3.3.8.Final
+2019-10-27 15:08:17.743  INFO 16256 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.8.Final
+2019-10-27 15:08:18.175  INFO 16256 --- [main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 8080 (http) with context path '/demo'
+2019-10-27 15:08:18.178  INFO 16256 --- [main] com.cw.DemoApplication                   : Started DemoApplication in 1.338 seconds (JVM running for 2.087)
+2019-10-27 15:08:25.584  INFO 16256 --- [XNIO-1 task-1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-27 15:08:25.585  INFO 16256 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-27 15:08:25.588  INFO 16256 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2019-10-27 15:08:25.594  INFO 16256 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 15:08:25.594  INFO 16256 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 15:08:25.595  INFO 16256 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 15:09:10.006  INFO 16256 --- [XNIO-1 task-2] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 15:09:10.007  INFO 16256 --- [XNIO-1 task-2] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 15:09:10.007  INFO 16256 --- [XNIO-1 task-2] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 15:13:36.436  INFO 16256 --- [RMI TCP Connection(18)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-10-27 15:13:36.438  INFO 16256 --- [RMI TCP Connection(18)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-27 15:13:36.439  INFO 16256 --- [RMI TCP Connection(18)-127.0.0.1] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2019-10-27 15:13:36.440  INFO 16256 --- [RMI TCP Connection(18)-127.0.0.1] io.undertow                              : stopping server: Undertow - 2.0.27.Final
+2019-10-27 15:13:43.316  INFO 14296 --- [main] com.cw.DemoApplication                   : Starting DemoApplication on DESKTOP-64DRU9D with PID 14296 (D:\spring\demo\target\classes started by cwly1 in D:\spring\demo)
+2019-10-27 15:13:43.318 DEBUG 14296 --- [main] com.cw.DemoApplication                   : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2019-10-27 15:13:43.318  INFO 14296 --- [main] com.cw.DemoApplication                   : The following profiles are active: dev
+2019-10-27 15:13:43.741  WARN 14296 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-10-27 15:13:43.754  INFO 14296 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2019-10-27 15:13:43.754  INFO 14296 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 414 ms
+2019-10-27 15:13:43.949  INFO 14296 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-27 15:13:43.975  INFO 14296 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [public/index.html]
+2019-10-27 15:13:44.034  INFO 14296 --- [main] io.undertow                              : starting server: Undertow - 2.0.27.Final
+2019-10-27 15:13:44.037  INFO 14296 --- [main] org.xnio                                 : XNIO version 3.3.8.Final
+2019-10-27 15:13:44.042  INFO 14296 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.8.Final
+2019-10-27 15:13:44.472  INFO 14296 --- [main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 8080 (http) with context path '/demo'
+2019-10-27 15:13:44.474  INFO 14296 --- [main] com.cw.DemoApplication                   : Started DemoApplication in 1.362 seconds (JVM running for 2.115)
+2019-10-27 15:13:49.155  INFO 14296 --- [XNIO-1 task-1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-27 15:13:49.156  INFO 14296 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-27 15:13:49.159  INFO 14296 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2019-10-27 15:13:49.165  INFO 14296 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 15:13:49.165  INFO 14296 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 15:13:49.165  INFO 14296 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 15:15:52.531  INFO 14296 --- [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-10-27 15:15:52.533  INFO 14296 --- [RMI TCP Connection(10)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-27 15:15:52.534  INFO 14296 --- [RMI TCP Connection(10)-127.0.0.1] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2019-10-27 15:15:52.535  INFO 14296 --- [RMI TCP Connection(10)-127.0.0.1] io.undertow                              : stopping server: Undertow - 2.0.27.Final
+2019-10-27 15:15:59.511  INFO 17280 --- [main] com.cw.DemoApplication                   : Starting DemoApplication on DESKTOP-64DRU9D with PID 17280 (D:\spring\demo\target\classes started by cwly1 in D:\spring\demo)
+2019-10-27 15:15:59.512 DEBUG 17280 --- [main] com.cw.DemoApplication                   : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2019-10-27 15:15:59.513  INFO 17280 --- [main] com.cw.DemoApplication                   : The following profiles are active: dev
+2019-10-27 15:15:59.922  WARN 17280 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-10-27 15:15:59.934  INFO 17280 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2019-10-27 15:15:59.934  INFO 17280 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 400 ms
+2019-10-27 15:16:00.129  INFO 17280 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-27 15:16:00.156  INFO 17280 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [public/index.html]
+2019-10-27 15:16:00.217  INFO 17280 --- [main] io.undertow                              : starting server: Undertow - 2.0.27.Final
+2019-10-27 15:16:00.221  INFO 17280 --- [main] org.xnio                                 : XNIO version 3.3.8.Final
+2019-10-27 15:16:00.226  INFO 17280 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.8.Final
+2019-10-27 15:16:00.658  INFO 17280 --- [main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 8080 (http) with context path '/demo'
+2019-10-27 15:16:00.660  INFO 17280 --- [main] com.cw.DemoApplication                   : Started DemoApplication in 1.35 seconds (JVM running for 2.104)
+2019-10-27 15:16:06.643  INFO 17280 --- [XNIO-1 task-1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-27 15:16:06.644  INFO 17280 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-27 15:16:06.647  INFO 17280 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2019-10-27 15:16:06.654  INFO 17280 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 15:16:06.654  INFO 17280 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 15:16:06.654  INFO 17280 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 15:16:06.663 ERROR 17280 --- [XNIO-1 task-1] io.undertow.request                      : UT005023: Exception handling request to /demo/demo
+
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:503) ~[jakarta.servlet-api-4.0.3.jar:4.0.3]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[jakarta.servlet-api-4.0.3.jar:4.0.3]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at com.cw.config.MyLocaleResolver.resolveLocale(MyLocaleResolver.java:32) ~[classes/:na]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1343) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	... 47 common frames omitted
+
+2019-10-27 15:16:06.666  INFO 17280 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : === request url: /demo/error ===
+2019-10-27 15:16:06.666  INFO 17280 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 15:16:06.666  INFO 17280 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 15:16:06.671 ERROR 17280 --- [XNIO-1 task-1] io.undertow.request                      : UT005022: Exception generating error page /error
+
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:503) ~[jakarta.servlet-api-4.0.3.jar:4.0.3]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[jakarta.servlet-api-4.0.3.jar:4.0.3]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:81) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:251) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchToPath(ServletInitialHandler.java:186) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:501) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:427) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:308) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at com.cw.config.MyLocaleResolver.resolveLocale(MyLocaleResolver.java:32) ~[classes/:na]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1343) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	... 30 common frames omitted
+
+2019-10-27 15:16:47.548  INFO 17280 --- [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-10-27 15:16:47.550  INFO 17280 --- [RMI TCP Connection(9)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-27 15:16:47.551  INFO 17280 --- [RMI TCP Connection(9)-127.0.0.1] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2019-10-27 15:16:47.553  INFO 17280 --- [RMI TCP Connection(9)-127.0.0.1] io.undertow                              : stopping server: Undertow - 2.0.27.Final
+2019-10-27 15:17:19.525  INFO 8796 --- [main] com.cw.DemoApplication                   : Starting DemoApplication on DESKTOP-64DRU9D with PID 8796 (D:\spring\demo\target\classes started by cwly1 in D:\spring\demo)
+2019-10-27 15:17:19.527 DEBUG 8796 --- [main] com.cw.DemoApplication                   : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2019-10-27 15:17:19.527  INFO 8796 --- [main] com.cw.DemoApplication                   : The following profiles are active: dev
+2019-10-27 15:17:19.935  WARN 8796 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-10-27 15:17:19.948  INFO 8796 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2019-10-27 15:17:19.949  INFO 8796 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 401 ms
+2019-10-27 15:17:20.143  INFO 8796 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-27 15:17:20.170  INFO 8796 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [public/index.html]
+2019-10-27 15:17:20.224  INFO 8796 --- [main] io.undertow                              : starting server: Undertow - 2.0.27.Final
+2019-10-27 15:17:20.227  INFO 8796 --- [main] org.xnio                                 : XNIO version 3.3.8.Final
+2019-10-27 15:17:20.231  INFO 8796 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.8.Final
+2019-10-27 15:17:20.664  INFO 8796 --- [main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 8080 (http) with context path '/demo'
+2019-10-27 15:17:20.666  INFO 8796 --- [main] com.cw.DemoApplication                   : Started DemoApplication in 1.347 seconds (JVM running for 2.117)
+2019-10-27 15:17:28.612  INFO 8796 --- [XNIO-1 task-1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-27 15:17:28.613  INFO 8796 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-27 15:17:28.616  INFO 8796 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2019-10-27 15:17:28.622  INFO 8796 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 15:17:28.622  INFO 8796 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 15:17:28.623  INFO 8796 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 15:17:28.633 ERROR 8796 --- [XNIO-1 task-1] io.undertow.request                      : UT005023: Exception handling request to /demo/demo
+
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:503) ~[jakarta.servlet-api-4.0.3.jar:4.0.3]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[jakarta.servlet-api-4.0.3.jar:4.0.3]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at com.cw.config.MyLocaleResolver.resolveLocale(MyLocaleResolver.java:34) ~[classes/:na]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1343) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	... 47 common frames omitted
+
+2019-10-27 15:17:28.635  INFO 8796 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : === request url: /demo/error ===
+2019-10-27 15:17:28.635  INFO 8796 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 15:17:28.635  INFO 8796 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 15:17:28.640 ERROR 8796 --- [XNIO-1 task-1] io.undertow.request                      : UT005022: Exception generating error page /error
+
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:503) ~[jakarta.servlet-api-4.0.3.jar:4.0.3]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[jakarta.servlet-api-4.0.3.jar:4.0.3]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:81) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:251) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchToPath(ServletInitialHandler.java:186) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:501) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:427) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:308) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at com.cw.config.MyLocaleResolver.resolveLocale(MyLocaleResolver.java:34) ~[classes/:na]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1343) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	... 30 common frames omitted
+
+2019-10-27 15:17:45.095  INFO 8796 --- [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-10-27 15:17:45.097  INFO 8796 --- [RMI TCP Connection(8)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-27 15:17:45.098  INFO 8796 --- [RMI TCP Connection(8)-127.0.0.1] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2019-10-27 15:17:45.100  INFO 8796 --- [RMI TCP Connection(8)-127.0.0.1] io.undertow                              : stopping server: Undertow - 2.0.27.Final
+2019-10-27 15:17:56.399  INFO 13184 --- [main] com.cw.DemoApplication                   : Starting DemoApplication on DESKTOP-64DRU9D with PID 13184 (D:\spring\demo\target\classes started by cwly1 in D:\spring\demo)
+2019-10-27 15:17:56.401 DEBUG 13184 --- [main] com.cw.DemoApplication                   : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2019-10-27 15:17:56.401  INFO 13184 --- [main] com.cw.DemoApplication                   : The following profiles are active: dev
+2019-10-27 15:17:56.806  WARN 13184 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2019-10-27 15:17:56.818  INFO 13184 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2019-10-27 15:17:56.818  INFO 13184 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 396 ms
+2019-10-27 15:17:57.008  INFO 13184 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-27 15:17:57.035  INFO 13184 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [public/index.html]
+2019-10-27 15:17:57.089  INFO 13184 --- [main] io.undertow                              : starting server: Undertow - 2.0.27.Final
+2019-10-27 15:17:57.092  INFO 13184 --- [main] org.xnio                                 : XNIO version 3.3.8.Final
+2019-10-27 15:17:57.097  INFO 13184 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.8.Final
+2019-10-27 15:17:57.530  INFO 13184 --- [main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 8080 (http) with context path '/demo'
+2019-10-27 15:17:57.532  INFO 13184 --- [main] com.cw.DemoApplication                   : Started DemoApplication in 1.331 seconds (JVM running for 2.083)
+2019-10-27 15:18:01.283  INFO 13184 --- [XNIO-1 task-1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-27 15:18:01.284  INFO 13184 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-27 15:18:01.288  INFO 13184 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2019-10-27 15:18:01.293  INFO 13184 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : === request url: /demo/demo ===
+2019-10-27 15:18:01.294  INFO 13184 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : query string:
+2019-10-27 15:18:01.294  INFO 13184 --- [XNIO-1 task-1] com.cw.handler.DemoIntercetors           : IP:0:0:0:0:0:0:0:1
+2019-10-27 15:18:19.367  INFO 13184 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-10-27 15:18:19.369  INFO 13184 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-27 15:18:19.371  INFO 13184 --- [RMI TCP Connection(2)-127.0.0.1] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2019-10-27 15:18:19.372  INFO 13184 --- [RMI TCP Connection(2)-127.0.0.1] io.undertow                              : stopping server: Undertow - 2.0.27.Final

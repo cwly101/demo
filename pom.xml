@@ -26,10 +26,10 @@
 	<dependencies>
 		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-security</artifactId> 
 			</dependency> -->
-		<!-- <dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency> -->
+		</dependency>
 		<!-- spring-boot-starter表示：spring boot 场景启动器， web：启动web模块正常运行所依赖的组件。
 		spring boot将所有功能场景一个个抽取出来，做成starter(启动器) ，只要在项目中引入这些starter，相关场景所有依赖都会导入进来，即可用  -->
 		<dependency>
@@ -91,6 +91,14 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>12</source>
+                    <target>12</target>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

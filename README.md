@@ -176,7 +176,9 @@ logging.file | logging.path | 示例 | 描述
 |---|:--:|:--:|---:
 (none) | (none) |  | 只在控制台打印
 指定文件名 | (none) | demo.log | 日志输出到demo.log(路径未指定，在程序根目录下生成demo.log)
-(none) | 指定目录 | ./logs | 输出到程序根目录下的logs文件夹中，默认文件夹名spring.log
+(none) | 指定目录 | ./logs | 输出到程序根目录下的logs文件夹中，默认文件夹名spring.log  
+  
+  
 **如果都指定了，file仅指定了文件名，path指定了目录，那么组合后生效。如果file同时指定了目录，path不生效，以file为准**  
 logging.pattern.console 控制台输出的日志格式  
 logging.pattern.file 日志文件中打印的日志格式  
@@ -186,3 +188,96 @@ logging.pattern.file 日志文件中打印的日志格式
 %logger{50} 表示logger名最多50个字符
 %msg 日志信息
 %n 换行
+
+
+### springboot项目打成.jar包使用内置web窗口部署后静态资源访问  
+1. "/**" 访问当前项目的任何资源，静态资源的文件夹
+```txt
+"classpath:/META-INF/resources",
+"classpath:/resources",
+"classpath:/static/",
+"classpath:/public"
+```
+localhost/abc  如果所有控制器api都不处理该请求，那么去静态资源路径下找abc  
+.js .css .html 均是一样，指定后缀名即可，如：abc.js、abc.js、abc.css  
+2. "/**"，如：localhost/ 访问首页，如果未指定页面， index.html默认为首页。
+
+
+### Thymeleaf 模板引擎
+只需要将.html页面放置在template文件路径下即可动渲染。  
+在html页面导入thymeleaf命名空间
+```html
+<html xmlns:th="http://www.thymeleaf.org">
+```
+#### 语法规则
+th:text 替html换标签当前文本内容
+th:utext  
+th:if  
+th:each  
+...  
+用法
+```html
+<div>
+      <span th:text="${author}">未替换的静态数据</span>
+   </div>
+   <!-- *{} 读取对象中的属性，只能在对象包裹的作用域使用 -->
+   <div th:object = "${user}"  style="border:1px solid red">      
+      username：<span th:text ="*{username}"></span><br />
+      age: <span th:text ="*{age}"></span><br />
+      <ul th:each ="pet:*{pets}">
+         <!-- 注：这里写成*{name}不行。因为是th:each，而非th:object。这是一个集合，不是一个对象，只能用th:each  -->
+         <li th:text="${pet.name}"></li>
+      </ul>
+   </div>
+   <div>
+      <a th:href="@{http://localhost:8080/demo(author=${author})}">@{} 传递查询参数的示例</a> | 
+      <a th:href="@{/(author=${author})}">@{} 主机名项目名可省略</a>
+   </div>
+```
+
+### STS 类搜索 Shift + Ctrl + h
+
+### WebMVC自动配置原理
+**以下这些都会自动注册**
+1. ContentNegotiatingViewResolver 组合所有的视图解析器，遍历，看哪个合适。如果没有，就解析不了。  
+我们可以添加一个视图解析器，如Thymeleaf。   REST API是不需要解析视图的。
+2. Converter 转换器。 页面提交的数据，转换成与之匹配的对象，这时就需要使用转换器。
+3. Formatter 格式化器。如日期转换。
+4. HttpMessageConverter http请求\响应消息转换器。如User对象以json格式数据返回。
+5. HttpMessageConverters 从容器获取所有的HttpMessageConverter。 也可以向容器中自定义注入添加
+6. MessageCodeResovler 定义错误代码生成规则
+7. ConfigurableWebBindingInitilizer 初始化web数据绑定器。请求数据===JavaBean
+
+### 如何修改Spring boot 的默认配置
+模式：  
+1. Spring boot在自动配置时，先看容器中有没有用户自己配置的（@Bean、@Component)，如果有，就用用户配置的，没有才自动配置。有些组件可以有多个，如ViewReslover，就将用户配置的和默认配置的组合起来。
+2. 扩展SpringMVC，如为某个控制器添加拦截器. spring mvc传统格式如下：
+```xml
+<mvc:view-controller path="/hello" view-name="success" />
+<mvc:interceptors>
+   <mvc:intercetor>
+      <mvc:mapping path="/hello">
+      <bean></bean>
+   </mvc:intercetor>
+</mvc:intercetors>
+```
+springboot编写配置mvc类，使用@Configuration注解类，比如声明一个拦截器类，需要扩展自WebMvcConfigurerAdapter类(Spring5.0中已弃用，请使用WebMvcConfigurer接口)
+### STS中查看某个接口或基类可重写的方法快捷键： ALT+SHIFT+S
+### WebMvcAutoConfigurationAdapter 自动配置类
+1. 这是spirngboot用于mvc的自动配置类，他实现了WebMvcConfigurer接口  
+2. 在做其它配置时导入： @Import(EnableWebMvcConfiguration.class) 作用：使所有的mvc配置生效，包括自动配置的和开发者的扩展配置。如果有重叠，扩展配置会覆盖自动配置的重叠部分。
+### @EnableWebMvc
+作用：全部接管SpringMVC的所有配置，这将导致Springboot关于mvc的自动配置完全失效。如果仅想扩展部分的自定义配置，请不要在类上标记该注解。  
+**为什么使用@EnableWebMvc会导入自动配置完全失效？**  
+**原理：@EnableWebMvc会导入WebConfigrationSupport, 而springboot的MVC自动配置类有行一行注解@ConditionalOnMssingBean(WebConfigrationSupport)  只有容器中不存在时才导入，现在存在了。**
+
+### Springboot自动配置好了国际化管理资源组件
+MessageResourceAutoConfiguration
+#### sts 资源编辑器安装步骤：
+1. 去【Eclipse Marketplace...】下载ResourceBundle Editer插件
+2. 新建--other--资源--ResourceBundle 资源集（属性文件）,创建各个国际化资源文件
+3. 右键创建的.properties文件--open with--资源文本编辑器打开  
+
+thymeleaf #{}取国际化值  
+springboot 区域信息解析器：LocaleResolver,获取请求头携带的区域信息，进行区域语言的选择，没有对应语言显示默认。   
+Request Headers(请求头语言)：Accept-Language: zh-CN,zh;q=0.9
