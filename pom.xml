@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<!-- 查看spring boot的版本仲裁中心，ctrl+点击进入，进而再点击spring-boot-dependencies  -->
+	<!-- 查看spring boot的版本仲裁中心，ctrl+点击进入，进而再点击spring-boot-dependencies -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -30,8 +30,8 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
-		<!-- spring-boot-starter表示：spring boot 场景启动器， web：启动web模块正常运行所依赖的组件。
-		spring boot将所有功能场景一个个抽取出来，做成starter(启动器) ，只要在项目中引入这些starter，相关场景所有依赖都会导入进来，即可用  -->
+		<!-- spring-boot-starter表示：spring boot 场景启动器， web：启动web模块正常运行所依赖的组件。 spring 
+			boot将所有功能场景一个个抽取出来，做成starter(启动器) ，只要在项目中引入这些starter，相关场景所有依赖都会导入进来，即可用 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -69,45 +69,56 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-logging</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
-
+		<!-- 使用@PropertySource 注解需要引入配置处理器包 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
+		<!-- Spring Boot实现热加载。运行期间， java文件修改保存后，自动重新编译 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-mongodb -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
 		<plugins>
-		    <!-- 此插件用途：将项目打包成一个可执行的jar包。 命令行直接运行此jar包即完成部署，如：
-		      java -jar demo.jar (切换到jar包所在目录下执行)  -->
+			<!-- 此插件用途：将项目打包成一个可执行的jar包。 命令行直接运行此jar包即完成部署，如： java -jar demo.jar (切换到jar包所在目录下执行) -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>12</source>
-                    <target>12</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>12</source>
-                    <target>12</target>
-                </configuration>
-            </plugin>
-        </plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>12</source>
+					<target>12</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>12</source>
+					<target>12</target>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 
 </project>

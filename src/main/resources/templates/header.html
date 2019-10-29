@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+   <div th:fragment="top" style="background-color:#808080;  left: 0; right: 0; position:fixed;padding: 0px 6px;height: 60px;">
+      <h3>Header Title （Thymeleaf 公共标签区域抽取，即公用模板抽取）</h3>
+   </div>
+   
+   <div id="sidebar"  style="position: absolute;left: 0; top: 72px; bottom: 0;width: 178px;background-color: #E6E6FA;">
+      <ul style="list-style-type:none;margin: 0px;padding: 5px;">
+         <li th:class="${activeUri}=='home'?'active':''"><a th:href="@{/thymeleaf}">首页</a></li>
+         <li th:class="${activeUri}=='emp'?'active':''"><a th:href="@{/employees}" >雇员列表</a></li>
+      </ul>
+   </div>
+</body>
+</html>

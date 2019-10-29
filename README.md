@@ -281,3 +281,44 @@ MessageResourceAutoConfiguration
 thymeleaf #{}取国际化值  
 springboot 区域信息解析器：LocaleResolver,获取请求头携带的区域信息，进行区域语言的选择，没有对应语言显示默认。   
 Request Headers(请求头语言)：Accept-Language: zh-CN,zh;q=0.9
+
+### Thymeleaf 公共标签区域抽取
+```html
+<!-- 抽取公共标签。 标签所在页面叫：footer.html -->
+<div th:fragment="copy">&copy; 2011 The Good Thymes Virtual Grocery</div>
+
+<!-- 插入公共标签。 footer：表示公共标签所在的页面名称。 -->
+<div th:insert="~{footer :: copy}"></div>
+<!-- 简写 -->
+<div th:insert="footer :: copy"></div>
+
+<!-- 插入标签的3种不同方式 insert 、replace 、include ，如下： -->
+<div th:insert="footer :: copy"></div>
+<div th:replace="footer :: copy"></div>
+<div th:include="footer :: copy"></div>
+
+<!-- insert 实际效果 -->
+<div>
+  <footer>&copy; 2011 The Good Thymes Virtual Grocery</footer>
+</div>
+
+<!-- replace 实际效果。 通常这种是我们想要的。 -->
+<footer>&copy; 2011 The Good Thymes Virtual Grocery</footer>
+
+<!-- include 实际效果。 只保留标签内的内容，标签去掉 -->
+<div>&copy; 2011 The Good Thymes Virtual Grocery</div>
+
+<!-- id公共标签的抽取方式加# -->
+<div id="copy">&copy; 2011 The Good Thymes Virtual Grocery</div>
+<div th:replace="footer :: #copy"></div>
+
+<!-- thymeleaf模板引擎 样式类引用示例 
+(activeUri='emp') 变量及给变量赋值，下面根据变量值选择套用的样式-->
+<div th:replace="header :: #sidebar(activeUri='emp')"></div>
+<!-- 三元运算表达式放在大括号里面或外面均可，推荐放在外边。${}里边存放的是变量 -->
+<li th:class="${activeUri=='home'?'active':''}"><a th:href="@{/thymeleaf}">首页</a></li>
+<li th:class="${activeUri=='emp'?'active':''}"><a th:href="@{/employees}" >雇员列表</a></li>
+
+<!-- 日期格式化 ${#date.format(date,'yyyy-MM-dd HH:mm:ss')} -->
+<td th:text="${#date.format(emp.birth,'yyyy-MM-dd HH:mm:ss')}"></td>
+```

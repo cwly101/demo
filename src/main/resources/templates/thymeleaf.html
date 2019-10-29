@@ -3,25 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <title>Thymeleaf Template</title>
+<link rel="shortcut icon" href="/demo/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="/demo/css/demo.css">
 </head>
 <body>
-   <h3>Thymeleaf Template 在 Spring boot</h3>
-   <h5>以下为展示Thymeleaf读取信息</h5>
-   <div>
-      <span th:text="${author}">未替换的静态数据</span>
-   </div>
-   <!-- *{} 读取对象中的属性，只能在对象包裹的作用域使用 -->
-   <div th:object = "${user}"  style="border:1px solid red">      
-      username：<span th:text ="*{username}"></span><br />
-      age: <span th:text ="*{age}"></span><br />
-      <ul th:each ="pet:*{pets}">
-         <!-- 注：这里写成*{name}不行。因为是th:each，而非th:object。这是一个集合，不是一个对象，只能用th:each  -->
-         <li th:text="${pet.name}"></li>
-      </ul>
-   </div>
-   <div>
-      <a th:href="@{http://localhost:8080/demo(author=${author})}">@{} 传递查询参数的示例</a> | 
-      <a th:href="@{/(author=${author})}">@{} 主机名项目名可省略</a>
-   </div>
+	<div th:replace="header :: top"></div>
+	<div th:replace="header :: #sidebar(activeUri='home')"></div>
+	<div style="position: absolute;left:178px; top: 72px;  position: absolute;">
+		<h3>Thymeleaf Template 在 Spring boot</h3>
+		<h5>以下为展示Thymeleaf读取信息</h5>
+		<div>
+			<span th:text="${author}">未替换的静态数据</span>
+		</div>
+		<!-- *{} 读取对象中的属性，只能在对象包裹的作用域使用 -->
+		<div th:object="${user}" style="border: 1px solid red">
+			username：<span th:text="*{username}"></span><br /> age: <span
+				th:text="*{age}"></span><br />
+			<ul th:each="pet:*{pets}">
+				<!-- 注：这里写成*{name}不行。因为是th:each，而非th:object。这是一个集合，不是一个对象，只能用th:each  -->
+				<li th:text="${pet.name}"></li>
+			</ul>
+		</div>
+		<div>
+			<a th:href="@{http://localhost:8080/demo(author=${author})}">@{}
+				传递查询参数的示例</a> | <a th:href="@{/(author=${author})}">@{} 主机名项目名可省略</a>
+		</div>
+	</div>
 </body>
 </html>

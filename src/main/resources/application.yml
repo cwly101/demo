@@ -5,7 +5,14 @@
 # 环境配置文件命令格式：application-{profile}.yml/properties
 spring:  profiles:    active:    - dev
   output:    ansi:      enabled:  ALWAYS
+  # 区域国际化语言配置文件.properties 所在路径
   messages:    basename: i18n.demo
+  # Mongodb 数据库连接配置  data:    mongodb:      port: 27017
+      host: localhost
+      database: springboot
+      # 如果未设置账号密码，不要设置这个两个属性。设置后不写，会有默认值，导致验证失败。
+#      username: 
+#      password: 
 logging:
   file: 
     # 推荐使用logging.file.name属性, 而不是 logging.file.path, 后者仅能指定日志文件的目录, 其文件名永远是spring.log

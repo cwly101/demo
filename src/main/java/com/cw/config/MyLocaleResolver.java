@@ -10,7 +10,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.LocaleResolver;
 
 /**
- * 自定义区域信息解析器
+ * 自定义区域语言信息解析器
  * @author cwly1
  *
  */

@@ -27,9 +27,12 @@ public class MvcConfig implements WebMvcConfigurer {
 	 */
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		// TODO Auto-generated method stub
 		// WebMvcConfigurer.super.addInterceptors(registry);
-		registry.addInterceptor(demoIntercetors).addPathPatterns("/**");
+		registry.addInterceptor(demoIntercetors)	   
+		   .addPathPatterns("/**")  // 拦截所有请求
+		   .excludePathPatterns("/demo","/login") // 访问登录页,及登录表单提交的请求不拦截
+		   ;
+		// springboot 已经做好了静态资源映射，这里无需手动配置。
 	}
 	
 	@Bean

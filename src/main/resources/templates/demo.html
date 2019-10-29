@@ -5,20 +5,23 @@
 <title th:text="#{demo.title}">Insert title here</title>
 </head>
 <body>
-   <h3 th:text="#{demo.title}"></h3>
-   <form>
-      <label th:text="#{demo.username}"></label>
-      <input th:placeholder ="#{demo.username}" /><br />
-      <label th:text="#{demo.password}"></label>
-      <input th:placeholder ="#{demo.password}" /><br />
-      <input type="checkbox"  />[[#{demo.remember}]]
-      <br />
-      <button th:text="#{demo.submit}"></button>
-      <p>这是根据浏览器言语的设置，决定显示哪种国际化语言（没有该语言显示默认值）</p>
-      <div>
-         <a th:href="@{/demo(l='zh_CN')}">中文</a> | 
-         <a th:href="@{/demo(l='en_US')}">English</a>
-      </div>
-   </form>
+    <div th:replace="header :: top"></div>
+    <div style="height: 50px;"></div>
+	<h3 th:text="#{demo.title}"></h3>
+	<!-- 登录失败错误提示  -->
+	<p style="color:red;" th:text="${msg}"  th:if="${not #strings.isEmpty(msg)}"></p>
+	<form th:action="@{/login}" method="post">
+		<label th:text="#{demo.username}"></label> <input name="username"
+			th:placeholder="#{demo.username}" /><br /> <label
+			th:text="#{demo.password}"></label> <input name="password"
+			th:placeholder="#{demo.password}" /><br /> <input type="checkbox" />[[#{demo.remember}]]
+		<br />
+		<button th:text="#{demo.submit}"></button>
+	</form>
+	<p>这是根据浏览器言语的设置，决定显示哪种国际化语言（没有该语言显示默认值）</p>
+	<div>
+		<a th:href="@{/demo(l='zh_CN')}">中文</a> | <a
+			th:href="@{/demo(l='en_US')}">English</a>
+	</div>
 </body>
 </html>

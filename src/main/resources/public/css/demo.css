@@ -1,0 +1,13 @@
+@charset "UTF-8";
+body {
+	background-color: #E8E8E8;
+}
+
+li {
+	margin:3px;
+}
+
+.active {
+	background-color: #40E0D0;
+	font-size: 22px;
+}
