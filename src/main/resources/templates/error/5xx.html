@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>服务器处理异常</title>
+</head>
+<body>
+   <h2>status: [[${status}]]</h2>
+   <h3>timestamp: [[${timestamp}]] </h3>
+   <h3>error:[[${error}]]</h3>
+   <!-- springboot2.x后此exception为空，trace包含此信息  -->
+   <!-- <h3>exception:[[${exception}]]</h3> -->
+   <h3>message:[[${message}]]</h3>
+   <h3>ext.code:[[${ext.code}]]</h3>
+   <h3>ext.message:[[${ext.message}]]</h3>
+</body>
+</html>

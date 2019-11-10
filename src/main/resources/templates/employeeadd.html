@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.themeleaf.org">
+<head>
+<meta charset="UTF-8" >
+<title>雇员新增</title>
+</head>
+<body>
+	<div th:replace="header :: top"></div>
+	<div th:replace="header :: #sidebar"></div>
+	<div style="position: absolute;left:178px; top: 72px;  position: absolute;">
+	   <h3>雇员新增</h3>
+	   <form th:action="@{/emp/add}"  method="post">
+	      <dl><dd>雇员编号：<input name="emp_no"  placeholder="如：No.100" /></dd></dl>
+	      <dl><dd>姓名：<input name="name"  placeholder="如：张三" /></dd></dl>
+	      <dl><dd>年龄：<input name="age"  placeholder="如：18" /></dd></dl>
+	      <dl><dd>职务：<input name="job"  placeholder="如：项目经理" /></dd></dl>
+	      <button type="submit">保存</button>
+	   </form>
+	</div>
+</body>
+</html>

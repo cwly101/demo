@@ -29,7 +29,6 @@ public class DemoController {
 //		User user = new User();
 //		user.setName("tomson");
 //		user.setAge(22);
-		System.out.println(user.toString());
 		return user;
 	}
 }

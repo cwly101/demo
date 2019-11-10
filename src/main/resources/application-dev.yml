@@ -1,6 +1,9 @@
 server:
   port: 8080
   servlet:    context-path: /demo
+  undertow:    accesslog:      dir: ./logs
+      enabled: true
+    buffer-size: 2048KB
 # 是否开启spring boot的调试模式，即自动配置报告打印到控制台
 debug: false
 logging:  level: 

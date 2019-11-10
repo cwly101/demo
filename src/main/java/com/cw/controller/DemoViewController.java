@@ -23,7 +23,6 @@ public class DemoViewController {
 	public String abcView(Map<String, Object> info) {
 		info.put("author", "矛盾");
 		info.put("user", user);
-		System.out.println(user);
 		return "thymeleaf";
 	}
 	
@@ -44,7 +43,6 @@ public class DemoViewController {
 			Map<String, Object> map,
 			HttpSession session
 			) {
-		System.out.println(passowrd.equals("123456"));
 		if(!StringUtils.isEmpty(username) && passowrd.equals("123456")) {  // 登录成功
 			session.setAttribute("login_user", username);  // 将用户放入session中. 拦截器验证使用
 			return "redirect:/thymeleaf";  // 路由重定向

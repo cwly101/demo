@@ -3,12 +3,15 @@ package com.cw;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import lombok.extern.slf4j.Slf4j;
+
 @SpringBootApplication  // spring boot 应用入口注解。内部包含@EnableAutoConfiguration、@AutoConfigurationPackage
+@Slf4j
 public class DemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
-		System.out.println("==== springboot application [deme] started! ====");
+		log.info("==== springboot application [deme] started! ====");
 	}
 	
 	/**

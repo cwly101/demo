@@ -10,7 +10,7 @@ import lombok.Data;
 public class Employee {
 
 	@Id
-	private String _id;
+	private String id;  // mongodb数据库为_id，这里直接使用id即可。如果使用_id，会导致表单提交数据_id为null.
 	/**
 	 * 员工编号
 	 */

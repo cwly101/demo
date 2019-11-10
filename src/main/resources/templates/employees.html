@@ -10,7 +10,7 @@
 	<div th:replace="header :: top"></div>
 	<div th:replace="header :: #sidebar(activeUri='emp')"></div>
 	<div style="position: absolute;left:178px; top: 72px;  position: absolute;">
-	    <button>新建员工</button>
+	    <a th:href="@{/emp/add}">新建员工</a>
 		<table>
 			<thead>
 				<tr>
@@ -28,10 +28,14 @@
 					<td th:text="${emp.age}"></td>
 					<td th:text="${emp.job}"></td>
 					<td>
-					   <button>编辑</button>
-					   <button>删除</button>
+					   <a th:href="@{/emp/edit/}+${emp.id}">编辑</a>
+					   <form th:action="@{/emp/del/}+${emp.id}"  method="post">
+					       <input type="hidden"  name="_method"  value="delete" />
+					       <button type="submit"  th:attr="del_uri=@{/emp/del/}+${emp.id}">删除</button>
+					   </form>
 					</td>
 				</tr>
+				<!-- thymeleaf自定义属性示例  th:attr="del_uri=@{/emp/del/}+${emp.id}" -->
 			</tbody>
 		</table>
 	</div>

@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
-import lombok.extern.slf4j.Slf4j;
+//import lombok.extern.slf4j.Slf4j;
 
 /**
  * 请求拦截器
@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  */
 @Component
-@Slf4j
+//@Slf4j
 public class DemoIntercetors implements HandlerInterceptor {
 
 	@Override
@@ -34,7 +34,7 @@ public class DemoIntercetors implements HandlerInterceptor {
 			request.getRequestDispatcher("/demo").forward(request, response);  // forward将请求与响应转出去
 			return false;
 		}
-		log.info(user.toString());
+//		log.info(user.toString());
 		return true;
 	}
 

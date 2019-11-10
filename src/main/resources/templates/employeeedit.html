@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.themeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div th:replace="header :: top"></div>
+	<div th:replace="header :: #sidebar"></div>
+	<div style="position: absolute; left: 178px; top: 72px; position: absolute;">
+		<h3>雇员编辑</h3>
+	   <form th:action="@{/emp/edit}"  method="post">
+	      <!-- springboot mvc下html表单以put方式发送 -->
+	      <input type="hidden" name="_method" value="put" />
+	      <input type="hidden" name="id"  th:value="${emp.id}" />
+	      <dl><dd>雇员编号：<input name="emp_no"  th:value="${emp.emp_no}"  placeholder="如：No.100" /></dd></dl>
+	      <dl><dd>姓名：<input name="name"  th:value="${emp.name}" placeholder="如：张三" /></dd></dl>
+	      <dl><dd>年龄：<input name="age"  th:value="${emp.age}"  placeholder="如：18" /></dd></dl>
+	      <dl><dd>职务：<input name="job"  th:value="${emp.job}" placeholder="如：项目经理" /></dd></dl>
+	      <button type="submit">保存</button>
+	   </form>
+	</div>
+</body>
+</html>
